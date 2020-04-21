@@ -1,0 +1,53 @@
+import React, { useState } from 'react';
+import { Box, Flex, SxStyleProp } from 'rebass';
+
+import { Close } from './components/Close';
+import { Carousel } from './components/Carousel';
+import { imageSource } from '../../../constants';
+
+import { FullScreenType } from './types';
+
+const FSBox: SxStyleProp = {
+  width: '100vw',
+  height: '100vh',
+};
+
+const FSMailFlex: SxStyleProp = { margin: '50px auto' };
+
+export const FullScreen: React.FC<FullScreenType> = ({ selectedImage, closeFullScreen }) => {
+  const [currentImage, changeCurrentImage] = useState(selectedImage);
+
+  const totalImages = imageSource.length;
+
+  const nextImage = (): void => {
+    changeCurrentImage((currentImage + 1) % totalImages);
+  };
+
+  const prevImage = (): void => (
+    changeCurrentImage((currentImage - 1) < 0 ? totalImages - 1 : currentImage - 1)
+  );
+
+  return (
+    <Box sx={FSBox}>
+
+      <Flex justifyContent="flex-end">
+        <Close onClick={closeFullScreen} />
+      </Flex>
+
+      <Flex justifyContent="space-between" sx={FSMailFlex}>
+
+        <Box width={4 / 5}>
+          <Carousel
+            selectedImage={currentImage}
+            next={nextImage}
+            prev={prevImage}
+          />
+        </Box>
+
+        <Box width={1 / 5}>
+          {/* TODO */}
+        </Box>
+      </Flex>
+    </Box>
+  );
+};

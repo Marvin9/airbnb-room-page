@@ -1,0 +1,59 @@
+{
+  "name": "airbnb",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "start": "tsc && parcel index.html",
+    "build": "tsc && parcel build index.html",
+    "refresh": "yarn remove shared && yarn",
+    "lint": "eslint src/**/*",
+    "lint:fix": "eslint src/**/* --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@rebass/preset": "^4.0.5",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.10.0",
+    "rebass": "^4.0.7",
+    "theme-ui": "^0.3.1",
+    "shared": "file:./src/shared"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/rebass": "^4.0.5",
+    "@types/theme-ui": "^0.3.1",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  },
+  "babel": {
+    "presets": [
+      "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
+  }
+}
