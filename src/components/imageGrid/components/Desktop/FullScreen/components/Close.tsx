@@ -1,10 +1,10 @@
 import React from 'react';
 import { IoIosClose } from 'react-icons/io';
 
-import { colors } from '../../../../../../shared';
+import { colors, fonts } from '../../../../../../shared';
 
 const FSClose: React.CSSProperties = {
-  fontSize: 60,
+  fontSize: fonts.large,
   cursor: 'pointer',
   color: colors.greyish,
   marginRight: 30,

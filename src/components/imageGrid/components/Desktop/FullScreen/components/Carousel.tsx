@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Image, SxStyleProp } from 'rebass';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import { colors } from '../../../../../../shared';
+import { colors, fonts } from '../../../../../../shared';
 import { imageSource } from '../../../../constants';
 
 import { CarouselProps } from '../types';
@@ -12,7 +12,7 @@ const CCommon: React.CSSProperties = {
 };
 
 const CIcon: React.CSSProperties = {
-  fontSize: 50,
+  fontSize: fonts.medium,
   color: colors.greyish2,
   cursor: 'pointer',
 };

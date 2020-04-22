@@ -8,6 +8,7 @@ import { FullScreen } from './FullScreen';
 import { imageSource } from '../../constants';
 import { ImageC } from './components/ImageC';
 import { ButtonC } from './components/ButtonC';
+import { breakPoints, header } from '../../../../shared';
 
 export const DesktopGrid: React.FC = () => {
   // full screen with initial image
@@ -21,17 +22,20 @@ export const DesktopGrid: React.FC = () => {
   }
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ position: 'relative', overflow: 'hidden', ...header }}>
       <Flex justifyContent="center">
         <ImageC src={imageSource[0]} big onClick={(): void => openFullScreen(0)} />
         <Flex flexDirection="column">
           <ImageC src={imageSource[1]} onClick={(): void => openFullScreen(1)} />
           <ImageC src={imageSource[2]} onClick={(): void => openFullScreen(2)} />
         </Flex>
-        <Flex flexDirection="column">
-          <ImageC src={imageSource[3]} onClick={(): void => openFullScreen(3)} />
-          <ImageC src={imageSource[4]} onClick={(): void => openFullScreen(4)} />
-        </Flex>
+
+        { window.innerWidth > breakPoints[1] && (
+          <Flex flexDirection="column">
+            <ImageC src={imageSource[3]} onClick={(): void => openFullScreen(3)} />
+            <ImageC src={imageSource[4]} onClick={(): void => openFullScreen(4)} />
+          </Flex>
+        )}
       </Flex>
 
       <Flex
