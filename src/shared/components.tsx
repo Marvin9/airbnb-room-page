@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text } from 'rebass';
 
 import { colors } from './index';
@@ -41,3 +41,39 @@ export const MediumHeading: React.FC<RestProp> = ({ children, ...rest }) => (
     {children}
   </Text>
 );
+
+interface ExpandableBoxProps extends RestProp {
+  maxChar?: number;
+  children: string;
+}
+
+export const ExpandableBox: React.FC<ExpandableBoxProps> = ({
+  children,
+  maxChar = 150,
+  ...rest
+}) => {
+  const [showAll, changeShowAll] = useState(true);
+
+  useEffect(() => {
+    if (children.length > maxChar) {
+      changeShowAll(false);
+    }
+  }, []);
+
+  return (
+    <Text
+      sx={{
+        wordWrap: 'break-word',
+      }}
+      {...rest}
+    >
+      {showAll && children}
+      {!showAll && `${children.slice(0, maxChar)}...`}
+      {!showAll && (
+        <LinkText onClick={(): void => changeShowAll(true)} m={0}>
+          Read More
+        </LinkText>
+      )}
+    </Text>
+  );
+};

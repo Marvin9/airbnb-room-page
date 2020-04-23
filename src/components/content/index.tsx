@@ -13,6 +13,7 @@ import { AdditionalDetails } from './components/additionalDetails';
 import { Amenities } from './components/amenities';
 import { SleepingArrangements } from './components/sleepingArrangements';
 import { Reviews } from './components/reviews';
+import { HostDetails } from './components/hostDetails';
 
 import { Divider } from '../../shared/components';
 
@@ -161,6 +162,21 @@ export const Content: React.FC = () => (
           },
         ]
       }
+    />
+
+    <HostDetails
+      hostName="Len"
+      hostDetails={['Calgary, Canada', 'Joined in November 2009']}
+      hostReviews={3}
+      verified
+      profilePic="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg"
+      details=" am a home owner in Calgary Alberta and i also rent rooms. I use kijiji to get long term renters on an ongoing basis. Being the nearest rental to YYC airport i have been renting mostly to Pilots &Flight crew (Website hidden by Airbnb) include this info to verify that i would be a trouble-free renter because i will behave the way i would wish/prefer my renters would. The most important concern is that the new person to whom i am letting into my home is safe for me and my other renters. Other very important character traits are of honesty, responsibility and respect and to a lesser degree but important hygiene and cleaning up after oneself. And so you will not need to worry about safety or your property. Also as i am new to airbnb and look forward to getting good feedback and using the service on a regular basis. My personality is easy going happy and helpful."
+      interactionWithGuests={{
+        title: 'Most days and hours i am available.',
+        languages: ['English'],
+        responseRate: '100%',
+        responseTime: 'within an hour',
+      }}
     />
   </>
 );
