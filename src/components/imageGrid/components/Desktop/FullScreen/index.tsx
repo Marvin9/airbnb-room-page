@@ -27,13 +27,6 @@ export const FullScreen: React.FC<FullScreenType> = ({ selectedImage, closeFullS
     changeCurrentImage((currentImage - 1) < 0 ? totalImages - 1 : currentImage - 1)
   );
 
-  const toggleBodyOverflow = (set: 'hidden' | 'visible'): void => {
-    const body = document.querySelector('body');
-    if (body && body.style) {
-      body.style.overflow = set;
-    }
-  };
-
   useEffect(() => {
     const body = document.querySelector('body');
     if (body && body.style) {
