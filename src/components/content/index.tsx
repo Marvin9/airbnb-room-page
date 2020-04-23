@@ -122,6 +122,45 @@ export const Content: React.FC = () => (
 
     <Divider />
 
-    <Reviews />
+    <Reviews
+      stars={4.92}
+      numberOfReviews={92}
+      propertyReviews={{
+        location: 4.5,
+        accuracy: 1,
+        cleanliness: 2,
+        communication: 3,
+        checkIn: 3.5,
+        value: 5,
+      }}
+      userReviews={
+        [
+          {
+            username: 'Mary',
+            profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg',
+            date: 'March 2020',
+            review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
+          },
+          {
+            username: 'Mary',
+            profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg',
+            date: 'March 2020',
+            review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
+          },
+          {
+            username: 'Mary',
+            profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg',
+            date: 'March 2020',
+            review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
+          },
+          {
+            username: 'Mary',
+            profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg',
+            date: 'March 2020',
+            review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
+          },
+        ]
+      }
+    />
   </>
 );

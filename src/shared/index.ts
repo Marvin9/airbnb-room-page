@@ -19,4 +19,7 @@ export const colors = {
   greyish2: '#272844',
   modernBlack: '#484848',
   blue: '#0F8BA3',
+  light: 'rgba(0, 0, 0, 0.1)',
 };
+
+export const reviewLineWidth = 5;

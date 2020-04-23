@@ -12,7 +12,7 @@ export const Divider: React.FC<RestProp> = ({ margin, ...all }) => (
     style={{
       background: colors.greyish,
       opacity: 0.2,
-      margin: margin ?? '20px 0',
+      margin: margin ?? '30px 0',
     }}
     {...all}
   />
@@ -36,8 +36,8 @@ export const LinkText: React.FC<RestProp> = ({ children, ...rest }) => (
   </Text>
 );
 
-export const MediumHeading: React.FC = ({ children }) => (
-  <Text fontSize={2} fontWeight="bold" my={3} color={colors.modernBlack}>
+export const MediumHeading: React.FC<RestProp> = ({ children, ...rest }) => (
+  <Text fontSize={2} fontWeight="bold" my={3} color={colors.modernBlack} {...rest}>
     {children}
   </Text>
 );

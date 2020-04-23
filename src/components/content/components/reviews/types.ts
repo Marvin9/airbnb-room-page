@@ -1,4 +1,4 @@
-export type PropertyReview = {
+export type PropertyReviewProps = {
   location: number;
   value: number;
   communication: number;
@@ -7,7 +7,7 @@ export type PropertyReview = {
   checkIn: number;
 };
 
-export type UserReview = {
+export type UserReviewProps = {
   username: string;
   profilePicture: string;
   date: string;
@@ -20,6 +20,6 @@ export interface OverallProps {
 }
 
 export interface ReviewsProps extends OverallProps {
-  propertyReviews: PropertyReview[];
-  userReviews: UserReview[];
+  propertyReviews: PropertyReviewProps;
+  userReviews: UserReviewProps[];
 }
