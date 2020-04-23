@@ -5,6 +5,7 @@ import {
   FaLandmark,
   FaDollarSign,
   FaBed,
+  FaSmoking,
 } from 'react-icons/fa';
 
 import { Header } from './components/header';
@@ -15,6 +16,7 @@ import { SleepingArrangements } from './components/sleepingArrangements';
 import { Reviews } from './components/reviews';
 import { HostDetails } from './components/hostDetails';
 import { Location } from './components/location';
+import { KeepInMind } from './components/keepInMind';
 
 import { Divider } from '../../shared/components';
 
@@ -193,6 +195,46 @@ export const Content: React.FC = () => (
       -Quick access to YYC No worries of being delayed on the way`}
       latitude={1}
       longitude={2}
+    />
+
+    <Divider />
+
+    <KeepInMind
+      checkIn="3:00 pm - 12:00 am"
+      checkOut="11:00 am"
+      additionalDetail="Self check-in with lockbox"
+      houseRules={[
+        {
+          title: 'Not suitable for infants (under 2 years)',
+          Icon: FaHome,
+        },
+        {
+          title: 'No smoking',
+          Icon: FaSmoking,
+        },
+        {
+          title: 'Not suitable for infants (under 2 years)',
+          Icon: FaHome,
+        },
+        {
+          title: 'No smoking',
+          Icon: FaSmoking,
+        },
+      ]}
+      acknowladge={[
+        {
+          title: 'Must climb stairs - 1 flight',
+          Icon: FaHome,
+        },
+        {
+          title: 'Some spaces are shared - Kitchen/Dining room, Living room upper Deck Bathroom',
+          Icon: FaHome,
+        },
+      ]}
+      cancellation={{
+        title: 'Free cancellation for 48 hours',
+        description: 'After that, cancel up to 24 hours before check-in and get a full refund, minus the service fee.',
+      }}
     />
   </>
 );
