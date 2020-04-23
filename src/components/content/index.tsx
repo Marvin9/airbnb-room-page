@@ -14,6 +14,7 @@ import { Amenities } from './components/amenities';
 import { SleepingArrangements } from './components/sleepingArrangements';
 import { Reviews } from './components/reviews';
 import { HostDetails } from './components/hostDetails';
+import { Location } from './components/location';
 
 import { Divider } from '../../shared/components';
 
@@ -177,6 +178,21 @@ export const Content: React.FC = () => (
         responseRate: '100%',
         responseTime: 'within an hour',
       }}
+    />
+
+    <Divider />
+
+    <Location
+      locationName="Northeast Calgary, Calgary, Alberta"
+      locationDetail={`SAFE QUIET single family Neighbourhood.
+      10 pm to 9am is Calgary's enforceable quiet time.`}
+      readMore={`Bus route 300 map & info is at the Calgary Transit site The stop near the house is @ Harvest Hills Lk. 5-8 min. walk
+      The 300 bus is an express bus from the airport to downtown in 20-35 minutes.
+      -5 to 15min to Airport by car, buss or bike
+      ***Car service cheaper than taxi rides are available ! -Save lots on taxi fares
+      -Quick access to YYC No worries of being delayed on the way`}
+      latitude={1}
+      longitude={2}
     />
   </>
 );

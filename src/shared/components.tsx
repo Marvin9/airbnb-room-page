@@ -18,30 +18,6 @@ export const Divider: React.FC<RestProp> = ({ margin, ...all }) => (
   />
 );
 
-export const Heading: React.FC<RestProp> = ({ children, ...rest }) => (
-  <Text fontSize={4} fontWeight="bold" my={3} color={colors.modernBlack} {...rest}>
-    {children}
-  </Text>
-);
-
-export const LinkText: React.FC<RestProp> = ({ children, ...rest }) => (
-  <Text
-    color={colors.blue}
-    sx={{ textDecoration: 'underline', cursor: 'pointer' }}
-    my={2}
-    fontWeight="bold"
-    {...rest}
-  >
-    {children}
-  </Text>
-);
-
-export const MediumHeading: React.FC<RestProp> = ({ children, ...rest }) => (
-  <Text fontSize={2} fontWeight="bold" my={3} color={colors.modernBlack} {...rest}>
-    {children}
-  </Text>
-);
-
 interface ExpandableBoxProps extends RestProp {
   maxChar?: number;
   children: string;
@@ -77,3 +53,65 @@ export const ExpandableBox: React.FC<ExpandableBoxProps> = ({
     </Text>
   );
 };
+
+export const Heading: React.FC<RestProp> = ({ children, ...rest }) => (
+  <Text fontSize={4} fontWeight="bold" my={3} color={colors.modernBlack} {...rest}>
+    {children}
+  </Text>
+);
+
+export const LinkText: React.FC<RestProp> = ({ children, ...rest }) => (
+  <Text
+    color={colors.blue}
+    sx={{ textDecoration: 'underline', cursor: 'pointer' }}
+    my={2}
+    fontWeight="bold"
+    {...rest}
+  >
+    {children}
+  </Text>
+);
+
+export const MediumHeading: React.FC<RestProp> = ({ children, ...rest }) => (
+  <Text fontSize={2} fontWeight="bold" my={3} color={colors.modernBlack} {...rest}>
+    {children}
+  </Text>
+);
+
+interface ReadMoreProps {
+  showLabel?: string;
+  hideLabel?: string;
+}
+
+export const ReadMore: React.FC<ReadMoreProps> = ({
+  children,
+  showLabel = 'Show more',
+  hideLabel = 'Hide',
+}) => {
+  const [showReadMore, changeReadMore] = useState(false);
+
+  const toggleReadMore = (): void => changeReadMore(!showReadMore);
+
+  return (
+    <>
+      {showReadMore && children}
+
+      <LinkText
+        onClick={(): void => toggleReadMore()}
+      >
+        {showReadMore ? hideLabel : showLabel}
+      </LinkText>
+    </>
+  );
+};
+
+export const TextWithBreakLines: React.FC<{ children: string }> = ({ children }) => (
+  <>
+    {children.split('\n').map((chunk) => (
+      <>
+        {chunk}
+        <br />
+      </>
+    ))}
+  </>
+);
