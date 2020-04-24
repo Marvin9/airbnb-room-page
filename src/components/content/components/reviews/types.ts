@@ -22,4 +22,5 @@ export interface OverallProps {
 export interface ReviewsProps extends OverallProps {
   propertyReviews: PropertyReviewProps;
   userReviews: UserReviewProps[];
+  perPage?: number;
 }

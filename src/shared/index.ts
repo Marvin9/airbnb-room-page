@@ -1,3 +1,4 @@
+import React, { HTMLAttributes } from 'react';
 import { SxStyleProp } from 'rebass';
 
 export const header: SxStyleProp = { marginTop: 50 };
@@ -23,3 +24,12 @@ export const colors = {
 };
 
 export const reviewLineWidth = 5;
+
+export const smoothScrollToRef = (ref: React.RefObject<HTMLElement>): void => {
+  if (ref && ref.current) {
+    window.scrollTo({
+      top: ref.current.offsetTop - 50,
+      behavior: 'smooth',
+    });
+  }
+};
