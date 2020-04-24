@@ -1,11 +1,12 @@
 import React from 'react';
-import { Flex, Text } from 'rebass';
+import { Box, Flex, Text } from 'rebass';
 
+import { Identity } from '../../../../shared';
 import { AmenitiesProps } from './types';
 import { LinkText, MediumHeading } from '../../../../shared/components';
 
-export const Amenities: React.FC<AmenitiesProps> = ({ amenities }) => (
-  <>
+export const Amenities: React.FC<AmenitiesProps & Identity> = ({ id, amenities }) => (
+  <Box id={id}>
     <MediumHeading>
       Amenities
     </MediumHeading>
@@ -24,5 +25,5 @@ export const Amenities: React.FC<AmenitiesProps> = ({ amenities }) => (
     <LinkText>
       Show all amenities
     </LinkText>
-  </>
+  </Box>
 );

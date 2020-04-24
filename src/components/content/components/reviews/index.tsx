@@ -3,7 +3,7 @@ import { Box, Flex, Text } from 'rebass';
 import { MdArrowForward, MdArrowBack } from 'react-icons/md';
 
 import { ReviewsProps, UserReviewProps } from './types';
-import { colors, smoothScrollToRef } from '../../../../shared';
+import { colors, smoothScrollToRef, Identity } from '../../../../shared';
 import { Heading, Divider } from '../../../../shared/components';
 
 import { IconWrapper } from './components/IconWrapper';
@@ -11,7 +11,8 @@ import { Overall } from './components/Overall';
 import { PropertyReview } from './components/PropertyReview';
 import { UserReviews } from './components/UserReviews';
 
-export const Reviews: React.FC<ReviewsProps> = ({
+export const Reviews: React.FC<ReviewsProps & Identity> = ({
+  id,
   stars,
   numberOfReviews,
   propertyReviews,
@@ -44,7 +45,7 @@ export const Reviews: React.FC<ReviewsProps> = ({
   };
 
   return (
-    <>
+    <Box id={id}>
       <Heading>
         Reviews
       </Heading>
@@ -79,6 +80,6 @@ export const Reviews: React.FC<ReviewsProps> = ({
       </Flex>
 
       <br />
-    </>
+    </Box>
   );
 };

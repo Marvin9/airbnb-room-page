@@ -6,17 +6,18 @@ import {
   Text,
 } from 'rebass';
 
-import { colors, fonts } from '../../../../shared';
+import { colors, fonts, Identity } from '../../../../shared';
 import { HeaderProps } from './types';
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header: React.FC<HeaderProps & Identity> = ({
+  id,
   title,
   userProfilePic,
   username,
   location,
   roomDetails,
 }) => (
-  <Flex alignItems="center">
+  <Flex alignItems="center" id={id}>
     <Box width={2 / 3}>
       <Text
         fontSize={fonts.small}

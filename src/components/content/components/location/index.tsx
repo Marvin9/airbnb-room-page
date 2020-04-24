@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Box, Text } from 'rebass';
 
 import { LocationProps } from './types';
-import { colors } from '../../../../shared';
+import { colors, Identity } from '../../../../shared';
 import { Heading, ReadMore, TextWithBreakLines } from '../../../../shared/components';
 
-export const Location: React.FC<LocationProps> = ({
+export const Location: React.FC<LocationProps & Identity> = ({
+  id,
   locationName,
   locationDetail,
   readMore,
 }) => (
-  <>
+  <Box id={id}>
     <Heading>
       {locationName}
     </Heading>
@@ -25,5 +26,5 @@ export const Location: React.FC<LocationProps> = ({
         </TextWithBreakLines>
       </ReadMore>
     )}
-  </>
+  </Box>
 );

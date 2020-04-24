@@ -1,5 +1,9 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import { SxStyleProp } from 'rebass';
+
+export interface Identity {
+  id: string;
+}
 
 export const header: SxStyleProp = { marginTop: 50 };
 
@@ -22,6 +26,8 @@ export const colors = {
   blue: '#0F8BA3',
   light: 'rgba(0, 0, 0, 0.1)',
 };
+
+export const contentMaxWidth = 650;
 
 export const reviewLineWidth = 5;
 

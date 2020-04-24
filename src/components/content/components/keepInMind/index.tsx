@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Box, Text } from 'rebass';
 
 import { KeepInMindProps } from './types';
-import { colors } from '../../../../shared';
+import { colors, Identity } from '../../../../shared';
 import {
   Divider,
   Heading,
@@ -14,7 +14,8 @@ import { HouseRules } from './components/HouseRules';
 import { Acknowledge } from './components/Acknowledge';
 import { Cancellation } from './components/Cancellation';
 
-export const KeepInMind: React.FC<KeepInMindProps> = ({
+export const KeepInMind: React.FC<KeepInMindProps & Identity> = ({
+  id,
   checkIn,
   checkOut,
   additionalDetail,
@@ -23,7 +24,7 @@ export const KeepInMind: React.FC<KeepInMindProps> = ({
   additionalRules,
   cancellation,
 }) => (
-  <>
+  <Box id={id}>
     <Heading>
       Things to keep in mind
     </Heading>
@@ -63,5 +64,5 @@ export const KeepInMind: React.FC<KeepInMindProps> = ({
     <Divider />
 
     <Cancellation {...cancellation} />
-  </>
+  </Box>
 );

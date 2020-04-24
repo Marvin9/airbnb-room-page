@@ -17,7 +17,8 @@ module.exports = {
       "import/prefer-default-export": "off",
       "react/prop-types": "off",
       "react/jsx-props-no-spreading": "off",
-      "@typescript-eslint/no-explicit-any": "off"
+      "@typescript-eslint/no-explicit-any": "off",
+      "jsx-a11y/anchor-is-valid": "off"
     },
     settings: {
         react: {

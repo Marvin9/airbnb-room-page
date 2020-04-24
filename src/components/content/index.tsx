@@ -8,6 +8,8 @@ import {
   FaSmoking,
 } from 'react-icons/fa';
 
+import { uniqueIds } from './constants';
+
 import { Header } from './components/header';
 import { Features } from './components/features';
 import { AdditionalDetails } from './components/additionalDetails';
@@ -23,6 +25,7 @@ import { Divider } from '../../shared/components';
 export const Content: React.FC = () => (
   <>
     <Header
+      id={uniqueIds.Header}
       title="Basic bedroom near YYC $16-18/night(+ clean/admin)"
       username="Len"
       userProfilePic="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg"
@@ -40,6 +43,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <Features
+      id={uniqueIds.Features}
       items={
         [
           {
@@ -69,6 +73,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <AdditionalDetails
+      id={uniqueIds.AdditionalDetails}
       description="This new modern and chic apartment is situated in the most travel friendly location, only steps away from CN Tower, Scotiabank Arena, Harbour front, Union Station, Financial District, and lots of bars and restaurants. There is a fast unlimited internet access, cable TV, indoor gym, pool, hot tub, sauna room, and outdoor lounge and pool. Tesla Wall Chargers are located in the underground parking area. High floor, quiet and lake view. Our outdoor apartment balcony will not disappoint."
       readMore={
         [
@@ -94,6 +99,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <Amenities
+      id={uniqueIds.Amenities}
       amenities={
         [
           {
@@ -119,6 +125,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <SleepingArrangements
+      id={uniqueIds.SleepingArrangements}
       title="Bedroom 1"
       description="1 queen bed"
       Icon={FaBed}
@@ -127,6 +134,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <Reviews
+      id={uniqueIds.Reviews}
       stars={4.92}
       numberOfReviews={92}
       propertyReviews={{
@@ -266,7 +274,7 @@ export const Content: React.FC = () => (
             review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
           },
           {
-            username: 'Mary3',
+            username: 'Mary4',
             profilePicture: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e6/e6b94ee5101ad7de8e483460f98d277fbb092b3f_full.jpg',
             date: 'March 2020',
             review: 'The space is very open and beautifully laid out. Everything was amazingly clean. Patsy was quick to respond to any questions I had. Great spot for a small family or two couples...there are two bedrooms and two bathrooms. I would definitely stay there again!',
@@ -276,6 +284,7 @@ export const Content: React.FC = () => (
     />
 
     <HostDetails
+      id={uniqueIds.HostDetails}
       hostName="Len"
       hostDetails={['Calgary, Canada', 'Joined in November 2009']}
       hostReviews={3}
@@ -293,6 +302,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <Location
+      id={uniqueIds.Location}
       locationName="Northeast Calgary, Calgary, Alberta"
       locationDetail={`SAFE QUIET single family Neighbourhood.
       10 pm to 9am is Calgary's enforceable quiet time.`}
@@ -308,6 +318,7 @@ export const Content: React.FC = () => (
     <Divider />
 
     <KeepInMind
+      id={uniqueIds.KeepInMind}
       checkIn="3:00 pm - 12:00 am"
       checkOut="11:00 am"
       additionalDetail="Self check-in with lockbox"

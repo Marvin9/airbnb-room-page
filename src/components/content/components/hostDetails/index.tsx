@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Button } from 'rebass';
 
-import { colors } from '../../../../shared';
+import { colors, Identity } from '../../../../shared';
 import { HostDetailsProps } from './types';
 import { Header } from './components/Header';
 import { Details } from './components/Details';
 
-export const HostDetails: React.FC<HostDetailsProps> = ({
+export const HostDetails: React.FC<HostDetailsProps & Identity> = ({
+  id,
   hostName,
   hostDetails,
   profilePic,
@@ -15,7 +16,7 @@ export const HostDetails: React.FC<HostDetailsProps> = ({
   verified,
   interactionWithGuests,
 }) => (
-  <Box>
+  <Box id={id}>
     <Header
       hostName={hostName}
       hostDetails={hostDetails}
