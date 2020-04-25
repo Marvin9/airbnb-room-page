@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from 'rebass';
 import {
   FaHome,
   FaBell,
@@ -23,7 +24,7 @@ import { KeepInMind } from './components/keepInMind';
 import { Divider } from '../../shared/components';
 
 export const Content: React.FC = () => (
-  <>
+  <Box width={2 / 3} mr={4}>
     <Header
       id={uniqueIds.Header}
       title="Basic bedroom near YYC $16-18/night(+ clean/admin)"
@@ -355,5 +356,5 @@ export const Content: React.FC = () => (
         description: 'After that, cancel up to 24 hours before check-in and get a full refund, minus the service fee.',
       }}
     />
-  </>
+  </Box>
 );

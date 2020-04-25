@@ -25,9 +25,11 @@ export const colors = {
   modernBlack: '#484848',
   blue: '#0F8BA3',
   light: 'rgba(0, 0, 0, 0.1)',
+  red: '#F8585E',
+  redDark: '#ff545b',
 };
 
-export const contentMaxWidth = 650;
+export const contentMaxWidth = 1024;
 
 export const reviewLineWidth = 5;
 

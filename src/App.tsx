@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Box } from 'rebass';
+import { Flex } from 'rebass';
 
 import { contentMaxWidth } from './shared';
 import {
   ImageGrid,
   Content,
   Navigation,
+  ReserveCard,
 } from './components';
 
 import { links } from './components/navigation/constants';
@@ -47,16 +48,25 @@ export const App: React.FC = () => {
 
       <ImageGrid />
 
-      <Box
+      <Flex
         sx={{
           maxWidth: contentMaxWidth,
           mx: 'auto',
           py: 30,
         }}
         my="auto"
+        alignItems="flex-start"
       >
         <Content />
-      </Box>
+        <ReserveCard
+          price={{
+            currentPrice: 1000,
+          }}
+          maxGuests={4}
+          review={4.7}
+          totalReviews={100}
+        />
+      </Flex>
     </>
   );
 };

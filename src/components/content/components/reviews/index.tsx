@@ -4,9 +4,8 @@ import { MdArrowForward, MdArrowBack } from 'react-icons/md';
 
 import { ReviewsProps, UserReviewProps } from './types';
 import { colors, smoothScrollToRef, Identity } from '../../../../shared';
-import { Heading, Divider } from '../../../../shared/components';
+import { Divider, Heading, IconWrapper } from '../../../../shared/components';
 
-import { IconWrapper } from './components/IconWrapper';
 import { Overall } from './components/Overall';
 import { PropertyReview } from './components/PropertyReview';
 import { UserReviews } from './components/UserReviews';

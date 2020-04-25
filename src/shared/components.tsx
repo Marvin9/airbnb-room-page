@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from 'rebass';
+import { Flex, Text } from 'rebass';
 
 import { colors } from './index';
 
@@ -59,6 +59,33 @@ export const Heading: React.FC<RestProp> = ({ children, ...rest }) => (
     {children}
   </Text>
 );
+
+type IconProps = {
+  onClick: Function;
+  [rest: string]: any;
+};
+
+export const IconWrapper: React.FC<IconProps> = ({ children, onClick, ...rest }) => (
+  <Flex
+    bg={colors.blue}
+    color="white"
+    p={2}
+    mx={3}
+    sx={{
+      cursor: 'pointer',
+      transition: '0.5s',
+      '&:hover': {
+        opacity: 0.8,
+      },
+      ...(rest.sx ? rest.sx : {}),
+    }}
+    onClick={(e): void => onClick(e)}
+    {...rest}
+  >
+    {children}
+  </Flex>
+);
+
 
 export const LinkText: React.FC<RestProp> = ({ children, ...rest }) => (
   <Text

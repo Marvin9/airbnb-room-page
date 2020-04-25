@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "tsc && parcel index.html --open",
+    "start": "parcel index.html --open",
     "build": "tsc && parcel build index.html",
     "refresh": "yarn remove shared && yarn",
     "lint": "eslint src/**/*",
