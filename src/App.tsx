@@ -65,6 +65,12 @@ export const App: React.FC = () => {
           maxGuests={4}
           review={4.7}
           totalReviews={100}
+          calculateTotalPrice={(guests): number => {
+            const adults = guests.adults ?? 1;
+            const children = guests.children ?? 0;
+
+            return Math.floor((adults + children) * 1000);
+          }}
         />
       </Flex>
     </>

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Label } from '@rebass/forms';
 import { Card } from 'rebass';
@@ -23,14 +23,21 @@ export const ReserveCard: React.FC<ReserveCardProps> = ({
   },
   review,
   totalReviews,
+  calculateTotalPrice,
 }) => {
   const [guestsState, guestsDispatch] = useReducer(guestsReducer, guests);
+  const [totalPrice, updateTotalPrice] = useState(price.currentPrice);
+
+  useEffect(() => {
+    const total = calculateTotalPrice(guestsState);
+    updateTotalPrice(total);
+  }, [guestsState]);
 
   return (
     <Card px={3} py={3} width={1 / 3} ml={3}>
       <Heading m={0}>
         $
-        {price.currentPrice}
+        {totalPrice}
         {' '}
         <SmallText>
           per night

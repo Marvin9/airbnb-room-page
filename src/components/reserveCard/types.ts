@@ -19,4 +19,5 @@ export interface ReserveCardProps {
   guests?: guestsType;
   review?: number;
   totalReviews?: number;
+  calculateTotalPrice(guests: guestsType): number;
 }
