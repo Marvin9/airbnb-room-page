@@ -3,7 +3,12 @@ import { Box, Text } from 'rebass';
 
 import { LocationProps } from './types';
 import { colors, Identity } from '../../../../shared';
-import { Divider, Heading, ReadMore, TextWithBreakLines } from '../../../../shared/components';
+import {
+  Divider,
+  Heading,
+  ReadMore,
+  TextWithBreakLines,
+} from '../../../../shared/components';
 
 export const Location: React.FC<LocationProps & Identity> = ({
   id,

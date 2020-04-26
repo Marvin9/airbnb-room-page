@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import shortid from 'shortid';
 import { Flex, Text } from 'rebass';
 
+import { AppContext, AppContextProps } from '../App';
 import { colors } from './index';
+
+const recountScrollTops = (globalValues: AppContextProps): void => {
+  globalValues.update({});
+};
 
 interface RestProp {
   [rest: string]: any;
@@ -31,6 +36,8 @@ export const ExpandableBox: React.FC<ExpandableBoxProps> = ({
 }) => {
   const [showAll, changeShowAll] = useState(true);
 
+  const values = useContext(AppContext);
+
   useEffect(() => {
     if (children.length > maxChar) {
       changeShowAll(false);
@@ -47,7 +54,13 @@ export const ExpandableBox: React.FC<ExpandableBoxProps> = ({
       {showAll && children}
       {!showAll && `${children.slice(0, maxChar)}...`}
       {!showAll && (
-        <LinkText onClick={(): void => changeShowAll(true)} m={0}>
+        <LinkText
+          onClick={(): void => {
+            changeShowAll(true);
+            recountScrollTops(values);
+          }}
+          m={0}
+        >
           Read More
         </LinkText>
       )}
@@ -118,7 +131,12 @@ export const ReadMore: React.FC<ReadMoreProps> = ({
 }) => {
   const [showReadMore, changeReadMore] = useState(false);
 
-  const toggleReadMore = (): void => changeReadMore(!showReadMore);
+  const values = useContext(AppContext);
+
+  const toggleReadMore = (): void => {
+    changeReadMore(!showReadMore);
+    recountScrollTops(values);
+  };
 
   return (
     <>

@@ -36,7 +36,7 @@ export const reviewLineWidth = 5;
 export const smoothScrollToRef = (ref: React.RefObject<HTMLElement>): void => {
   if (ref && ref.current) {
     window.scrollTo({
-      top: ref.current.offsetTop - 50,
+      top: ref.current.offsetTop,
       behavior: 'smooth',
     });
   }

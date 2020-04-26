@@ -340,5 +340,6 @@ export const Content: React.FC = () => (
         description: 'After that, cancel up to 24 hours before check-in and get a full refund, minus the service fee.',
       }}
     />
+
   </Box>
 );

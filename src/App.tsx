@@ -11,8 +11,15 @@ import {
 
 import { links } from './components/navigation/constants';
 
+export interface AppContextProps {
+  update: React.Dispatch<any>;
+}
+
+export const AppContext = React.createContext({} as AppContextProps);
+
 export const App: React.FC = () => {
   const [scrollTops, updateScrollTops] = useState<number[]>([]);
+  const [fakeScrollTop, reUpdateScrollTops] = useState<any>({});
 
   useEffect(() => {
     let navigationEssentials: number[] = [];
@@ -29,10 +36,10 @@ export const App: React.FC = () => {
       }
     });
     updateScrollTops(navigationEssentials);
-  }, []);
+  }, [fakeScrollTop]);
 
   return (
-    <>
+    <AppContext.Provider value={{ update: reUpdateScrollTops }}>
       {!!scrollTops.length
         && <Navigation offsetTopsOfContents={scrollTops} />}
 
@@ -64,6 +71,6 @@ export const App: React.FC = () => {
           }}
         />
       </Flex>
-    </>
+    </AppContext.Provider>
   );
 };
