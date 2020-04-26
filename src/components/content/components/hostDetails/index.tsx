@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button } from 'rebass';
 
+import { Divider } from '../../../../shared/components';
 import { colors, Identity } from '../../../../shared';
 import { HostDetailsProps } from './types';
 import { Header } from './components/Header';
@@ -17,6 +18,8 @@ export const HostDetails: React.FC<HostDetailsProps & Identity> = ({
   interactionWithGuests,
 }) => (
   <Box id={id}>
+    <Divider />
+
     <Header
       hostName={hostName}
       hostDetails={hostDetails}

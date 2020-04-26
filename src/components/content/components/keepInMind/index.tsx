@@ -25,6 +25,8 @@ export const KeepInMind: React.FC<KeepInMindProps & Identity> = ({
   cancellation,
 }) => (
   <Box id={id}>
+    <Divider />
+
     <Heading>
       Things to keep in mind
     </Heading>

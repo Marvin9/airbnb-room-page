@@ -8,20 +8,15 @@ import { links } from './constants';
 import { Link } from './components/Link';
 
 export const Navigation: React.FC<NavigationProps> = ({ offsetTopsOfContents }) => {
-  const [currentActiveLink, setActiveLink] = useState(0);
-  const bound = offsetTopsOfContents.length - 1;
+  const [currentActiveLink, setActiveLink] = useState(-1);
 
   const linksHandler = (): void => {
-    if (
-      currentActiveLink + 1 <= bound
-      && window.scrollY >= offsetTopsOfContents[currentActiveLink + 1]
-    ) {
-      setActiveLink(currentActiveLink + 1);
-    } else if (
-      currentActiveLink - 1 >= 0
-      && window.scrollY <= offsetTopsOfContents[currentActiveLink - 1]
-    ) {
-      setActiveLink(currentActiveLink - 1);
+    for (let i = offsetTopsOfContents.length - 1; i >= 0; i -= 1) {
+      if (offsetTopsOfContents[i] <= window.scrollY) {
+        setActiveLink(i);
+        return;
+      }
+      setActiveLink(-1);
     }
   };
 
@@ -30,6 +25,8 @@ export const Navigation: React.FC<NavigationProps> = ({ offsetTopsOfContents }) 
     window.addEventListener('scroll', linksHandler);
     return (): void => window.removeEventListener('scroll', linksHandler);
   }, [currentActiveLink]);
+
+  if (currentActiveLink === -1) return null;
 
   return (
     <Box

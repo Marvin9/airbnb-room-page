@@ -13,7 +13,6 @@ import { links } from './components/navigation/constants';
 
 export const App: React.FC = () => {
   const [scrollTops, updateScrollTops] = useState<number[]>([]);
-  const [currentScroll, updateCurrentScroll] = useState(0);
 
   useEffect(() => {
     let navigationEssentials: number[] = [];
@@ -32,18 +31,9 @@ export const App: React.FC = () => {
     updateScrollTops(navigationEssentials);
   }, []);
 
-  const setScroll = (): void => updateCurrentScroll(window.scrollY);
-
-  // https://github.com/facebook/react/issues/14066
-  useEffect(() => {
-    window.addEventListener('scroll', setScroll);
-    return (): void => window.removeEventListener('scroll', setScroll);
-  }, [currentScroll]);
-
   return (
     <>
       {!!scrollTops.length
-        && currentScroll >= scrollTops[0]
         && <Navigation offsetTopsOfContents={scrollTops} />}
 
       <ImageGrid />
@@ -58,6 +48,7 @@ export const App: React.FC = () => {
         alignItems="flex-start"
       >
         <Content />
+
         <ReserveCard
           price={{
             currentPrice: 1000,

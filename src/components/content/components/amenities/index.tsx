@@ -4,10 +4,12 @@ import { Box, Flex, Text } from 'rebass';
 
 import { Identity } from '../../../../shared';
 import { AmenitiesProps } from './types';
-import { LinkText, MediumHeading } from '../../../../shared/components';
+import { Divider, LinkText, MediumHeading } from '../../../../shared/components';
 
 export const Amenities: React.FC<AmenitiesProps & Identity> = ({ id, amenities }) => (
   <Box id={id}>
+    <Divider />
+
     <MediumHeading>
       Amenities
     </MediumHeading>

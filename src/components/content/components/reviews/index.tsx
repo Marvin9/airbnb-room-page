@@ -45,6 +45,8 @@ export const Reviews: React.FC<ReviewsProps & Identity> = ({
 
   return (
     <Box id={id}>
+      <Divider />
+
       <Heading>
         Reviews
       </Heading>

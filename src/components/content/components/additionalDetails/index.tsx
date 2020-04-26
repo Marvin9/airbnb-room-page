@@ -4,7 +4,7 @@ import { Box, Text } from 'rebass';
 
 import { Chunk } from './component/Chunk';
 import { colors, Identity } from '../../../../shared';
-import { ReadMore } from '../../../../shared/components';
+import { Divider, ReadMore } from '../../../../shared/components';
 import { AdditionalDetailsProps } from './types';
 
 export const AdditionalDetails: React.FC<AdditionalDetailsProps & Identity> = ({
@@ -13,6 +13,8 @@ export const AdditionalDetails: React.FC<AdditionalDetailsProps & Identity> = ({
   readMore,
 }) => (
   <Box id={id}>
+    <Divider />
+
     <Text color={colors.greyish2}>
       {description}
     </Text>

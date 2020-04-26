@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Card, Text } from 'rebass';
 
 import { SleepingArrangementProps } from './types';
-import { MediumHeading } from '../../../../shared/components';
+import { Divider, MediumHeading } from '../../../../shared/components';
 import { colors, Identity } from '../../../../shared';
 
 export const SleepingArrangements: React.FC<SleepingArrangementProps & Identity> = ({
@@ -12,6 +12,8 @@ export const SleepingArrangements: React.FC<SleepingArrangementProps & Identity>
   Icon,
 }) => (
   <Box id={id}>
+    <Divider />
+
     <MediumHeading>
       Sleeping arrangements
     </MediumHeading>

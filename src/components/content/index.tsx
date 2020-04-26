@@ -21,8 +21,6 @@ import { HostDetails } from './components/hostDetails';
 import { Location } from './components/location';
 import { KeepInMind } from './components/keepInMind';
 
-import { Divider } from '../../shared/components';
-
 export const Content: React.FC = () => (
   <Box width={2 / 3} mr={4}>
     <Header
@@ -40,8 +38,6 @@ export const Content: React.FC = () => (
         ]
       }
     />
-
-    <Divider />
 
     <Features
       id={uniqueIds.Features}
@@ -71,8 +67,6 @@ export const Content: React.FC = () => (
       }
     />
 
-    <Divider />
-
     <AdditionalDetails
       id={uniqueIds.AdditionalDetails}
       description="This new modern and chic apartment is situated in the most travel friendly location, only steps away from CN Tower, Scotiabank Arena, Harbour front, Union Station, Financial District, and lots of bars and restaurants. There is a fast unlimited internet access, cable TV, indoor gym, pool, hot tub, sauna room, and outdoor lounge and pool. Tesla Wall Chargers are located in the underground parking area. High floor, quiet and lake view. Our outdoor apartment balcony will not disappoint."
@@ -96,8 +90,6 @@ export const Content: React.FC = () => (
         ]
       }
     />
-
-    <Divider />
 
     <Amenities
       id={uniqueIds.Amenities}
@@ -123,16 +115,12 @@ export const Content: React.FC = () => (
       }
     />
 
-    <Divider />
-
     <SleepingArrangements
       id={uniqueIds.SleepingArrangements}
       title="Bedroom 1"
       description="1 queen bed"
       Icon={FaBed}
     />
-
-    <Divider />
 
     <Reviews
       id={uniqueIds.Reviews}
@@ -300,8 +288,6 @@ export const Content: React.FC = () => (
       }}
     />
 
-    <Divider />
-
     <Location
       id={uniqueIds.Location}
       locationName="Northeast Calgary, Calgary, Alberta"
@@ -315,8 +301,6 @@ export const Content: React.FC = () => (
       latitude={1}
       longitude={2}
     />
-
-    <Divider />
 
     <KeepInMind
       id={uniqueIds.KeepInMind}
