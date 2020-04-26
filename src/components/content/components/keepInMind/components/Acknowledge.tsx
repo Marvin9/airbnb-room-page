@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import { Box, Flex } from 'rebass';
 
 import { MediumHeading } from '../../../../../shared/components';
@@ -15,7 +16,7 @@ export const Acknowledge: React.FC<{ additonal: HouseRulesProps[] }> = ({
     </MediumHeading>
     <Box my={4}>
       {additonal.map((rule) => (
-        <Flex my={4}>
+        <Flex my={4} key={shortid.generate()}>
           <IconC Icon={rule.Icon} />
           {rule.title}
         </Flex>

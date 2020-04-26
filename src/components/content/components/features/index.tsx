@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import { Box } from 'rebass';
 
 import { Identity } from '../../../../shared';
@@ -7,6 +8,6 @@ import { FeaturesProps } from './types';
 
 export const Features: React.FC<FeaturesProps & Identity> = ({ id, items }) => (
   <Box id={id}>
-    {items.map((item) => <ListItem {...item} />)}
+    {items.map((item) => <ListItem key={shortid.generate()} {...item} />)}
   </Box>
 );

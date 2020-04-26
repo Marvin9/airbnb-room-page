@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import {
   Box,
   Flex,
@@ -44,7 +45,7 @@ export const Header: React.FC<HeaderProps & Identity> = ({
       {!!roomDetails && (
         <>
           <Text color={colors.greyish2} mt={1}>
-            {roomDetails.map((detail) => <span style={{ marginRight: '20px' }}>{detail}</span>)}
+            {roomDetails.map((detail) => <span key={shortid.generate()} style={{ marginRight: '20px' }}>{detail}</span>)}
           </Text>
         </>
       )}

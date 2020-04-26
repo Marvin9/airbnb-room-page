@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import { Flex, Text } from 'rebass';
 
 import { MediumHeading } from '../../../../../shared/components';
@@ -16,7 +17,12 @@ export const HouseRules: React.FC<{ houseRules: HouseRulesProps[] }> = ({
     </MediumHeading>
     <Flex flexWrap="wrap">
       {houseRules.map((rule) => (
-        <Flex width={1 / 2} key={rule.title} alignItems="center" my={2}>
+        <Flex
+          width={1 / 2}
+          key={shortid.generate()}
+          alignItems="center"
+          my={2}
+        >
           <IconC Icon={rule.Icon} />
           <Text mx={2} color={colors.greyish2}>{rule.title}</Text>
         </Flex>

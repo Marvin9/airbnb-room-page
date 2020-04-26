@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import { Box, Text } from 'rebass';
 
 import { Chunk } from './component/Chunk';
@@ -17,7 +18,7 @@ export const AdditionalDetails: React.FC<AdditionalDetailsProps & Identity> = ({
     </Text>
 
     <ReadMore>
-      {readMore.map((chunk) => <Chunk key={chunk.title} {...chunk} />)}
+      {readMore.map((chunk) => <Chunk key={shortid.generate()} {...chunk} />)}
     </ReadMore>
   </Box>
 );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import shortid from 'shortid';
 import { Flex, Text } from 'rebass';
 
 import { colors } from './index';
@@ -135,10 +136,10 @@ export const ReadMore: React.FC<ReadMoreProps> = ({
 export const TextWithBreakLines: React.FC<{ children: string }> = ({ children }) => (
   <>
     {children.split('\n').map((chunk) => (
-      <>
+      <React.Fragment key={shortid.generate()}>
         {chunk}
         <br />
-      </>
+      </React.Fragment>
     ))}
   </>
 );

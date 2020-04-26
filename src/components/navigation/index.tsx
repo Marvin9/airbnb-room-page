@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import shortid from 'shortid';
 import { Box, Flex } from 'rebass';
 
 import { NavigationProps } from './types';
@@ -50,7 +51,7 @@ export const Navigation: React.FC<NavigationProps> = ({ offsetTopsOfContents }) 
       >
         {links.map((link, index) => (
           <Link
-            key={link.name}
+            key={shortid.generate()}
             {...(
               index === currentActiveLink
                 ? { active: true }
