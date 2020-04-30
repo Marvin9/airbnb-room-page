@@ -18,7 +18,7 @@ export const HouseRules: React.FC<{ houseRules: HouseRulesProps[] }> = ({
     <Flex flexWrap="wrap">
       {houseRules.map((rule) => (
         <Flex
-          width={1 / 2}
+          width={[1, 1 / 2]}
           key={shortid.generate()}
           alignItems="center"
           my={2}

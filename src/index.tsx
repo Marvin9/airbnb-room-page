@@ -4,8 +4,13 @@ import { ThemeProvider } from 'theme-ui';
 import preset from '@rebass/preset';
 import { App } from './App';
 
+const theme = {
+  ...preset,
+  breakpoints: ['769px', '3000px'],
+};
+
 ReactDOM.render(
-  <ThemeProvider theme={preset}>
+  <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>,
   document.getElementById('root'),

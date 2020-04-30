@@ -22,7 +22,7 @@ import { Location } from './components/location';
 import { KeepInMind } from './components/keepInMind';
 
 export const Content: React.FC = () => (
-  <Box width={2 / 3} mr={4}>
+  <Box width={[1, 2 / 3]} mr={[0, 4]}>
     <Header
       id={uniqueIds.Header}
       title="Basic bedroom near YYC $16-18/night(+ clean/admin)"

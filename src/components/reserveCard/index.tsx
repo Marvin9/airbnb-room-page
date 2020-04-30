@@ -34,7 +34,7 @@ export const ReserveCard: React.FC<ReserveCardProps> = ({
   }, [guestsState]);
 
   return (
-    <Card px={3} py={3} width={1 / 3} ml={3}>
+    <Card px={3} py={3} width={[1, 1 / 3]} ml={[0, 3]}>
       <Heading m={0}>
         $
         {totalPrice}

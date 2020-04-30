@@ -50,9 +50,11 @@ export const App: React.FC = () => {
           maxWidth: contentMaxWidth,
           mx: 'auto',
           py: 30,
+          px: [3, 0],
         }}
         my="auto"
         alignItems="flex-start"
+        flexWrap={['wrap', 'nowrap']}
       >
         <Content />
 

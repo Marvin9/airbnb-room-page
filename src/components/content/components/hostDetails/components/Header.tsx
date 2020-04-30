@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
   verified,
   profilePic,
 }) => (
-  <Flex alignItems="center">
+  <Flex alignItems={['flex-start', 'center']} flexDirection={['column', 'row']}>
     <Box>
       <Heading m={0}>
         Hosted by
@@ -60,6 +60,6 @@ export const Header: React.FC<HeaderProps> = ({
         </Flex>
       )}
     </Box>
-    <Image src={profilePic} variant="avatar" ml="auto" />
+    <Image src={profilePic} variant="avatar" ml={[0, 'auto']} mt={[2, 0]} />
   </Flex>
 );

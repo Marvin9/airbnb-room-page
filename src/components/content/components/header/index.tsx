@@ -18,8 +18,8 @@ export const Header: React.FC<HeaderProps & Identity> = ({
   location,
   roomDetails,
 }) => (
-  <Flex alignItems="center" id={id}>
-    <Box width={2 / 3}>
+  <Flex alignItems={['flex-start', 'center']} id={id} flexDirection={['column', 'row']}>
+    <Box width={[1, 2 / 3]}>
       <Text
         fontSize={fonts.small}
         fontWeight="bold"
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps & Identity> = ({
       )}
     </Box>
 
-    <Flex width={1 / 3} flexDirection="column" alignItems="center">
+    <Flex width={[1, 1 / 3]} flexDirection="column" alignItems={['flex-start', 'center']} mt={[2, 0]}>
       <Image src={userProfilePic} variant="avatar" />
       <Text color={colors.greyish}>
         {username}

@@ -12,7 +12,7 @@ export const IconC: React.FC<IconCProps> = ({ Icon }) => (
     style={{
       color: colors.modernBlack,
       marginRight: 20,
-      fontSize: 25,
+      fontSize: '2em',
     }}
   />
 );

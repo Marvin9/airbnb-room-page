@@ -11,8 +11,8 @@ export const Overall: React.FC<OverallProps> = ({
   stars,
   numberOfReviews,
 }) => (
-  <Flex alignItems="center">
-    <Flex justifyContent="center">
+  <Flex alignItems={['flex-start', 'center']} flexDirection={['column', 'row']}>
+    <Flex justifyContent={['flex-start', 'center']}>
       <MediumHeading
         my={0}
         mr={20}
@@ -30,7 +30,7 @@ export const Overall: React.FC<OverallProps> = ({
       </Text>
     </Flex>
 
-    <Flex ml="auto">
+    <Flex ml={[0, 'auto']} mt={[2, 0]}>
       <Input placeholder="Search reviews" sx={{ color: colors.greyish }} />
     </Flex>
   </Flex>

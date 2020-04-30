@@ -10,7 +10,7 @@ interface ChunkProps {
 }
 
 export const Chunk: React.FC<ChunkProps> = ({ chunkName, chunkValue }) => (
-  <Flex width={1 / 2} alignItems="center">
+  <Flex width={[1, 1 / 2]} alignItems="center">
     <Text width={1 / 3}>
       {chunkName[0].toUpperCase() + chunkName.slice(1)}
     </Text>

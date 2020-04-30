@@ -18,7 +18,7 @@ export const SleepingArrangements: React.FC<SleepingArrangementProps & Identity>
       Sleeping arrangements
     </MediumHeading>
 
-    <Card p={20} width={1 / 4}>
+    <Card p={20} width={[1, 1 / 4]}>
       <Icon style={{ fontSize: 20 }} />
       <Text color={colors.greyish2}>
         {title}
